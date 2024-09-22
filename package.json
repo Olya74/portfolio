@@ -1,0 +1,15 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "description": "Das ist mein  Project für Prüfung",
+  "main": "index.js",
+  "scripts": {
+    "start": "sass --watch src/scss:src/css --style compressed"
+  },
+  "keywords": [],
+  "author": "Olga Korkhova",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.79.3"
+  }
+}
