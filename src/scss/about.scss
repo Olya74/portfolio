@@ -1,0 +1,277 @@
+@import url("https://fonts.googleapis.com/css2?family=Pacifico&display=swap");
+@import url("../Roboto/");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+$color-green: rgb(30, 218, 171);
+$color-blue: rgb(84, 196, 196);
+$color-red: rgb(196, 84, 84);
+$color-yellow: yellow;
+$color-fähig: rgba(86, 94, 141, 0.493);
+$bg-linea-gradient: linear-gradient(
+  90deg,
+  rgb(106, 49, 98),
+  rgb(106, 49, 98),
+  rgb(65, 6, 78),
+  rgba(0, 0, 0, 0.5)
+);
+$bg-color-black: rgb(0, 0, 0);
+$color-white: rgb(255, 255, 255);
+$font-size: 2rem;
+$blur: 10px;
+$opacity: 0.8;
+$list-style: none;
+
+@mixin flex($justify, $align: center) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+html {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 62.5%;
+  user-select: none;
+}
+
+body {
+  background-color: rgba(136, 117, 91, 0.7);
+}
+.header {
+  @include flex(space-between);
+  grid-area: header;
+  z-index: 2;
+  background-color: rgb(136, 117, 91);
+  padding: 1rem;
+  .navbar,
+  ul {
+    @include flex(end);
+    list-style-type: $list-style;
+    li {
+      padding: 2rem 3rem;
+      a {
+        font-size: $font-size;
+      }
+    }
+  }
+}
+.header .logo {
+  font-family: "Pacifico", cursive;
+  font-size: 3.8rem;
+  text-decoration: none;
+  font-weight: bolder;
+  text-shadow: 2px 2px 2px $color-white;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgb(202, 185, 145);
+  min-width: 10rem;
+  border-radius: 5px;
+  box-shadow: 2px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  padding: 12px 16px;
+  z-index: 1;
+}
+.navbar ul li:nth-of-type(3):hover .dropdown-content {
+  display: block;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+}
+a {
+  text-decoration: none;
+  color: $color-white;
+  font-size: $font-size;
+}
+
+h1 {
+  font-family: var(--font-Roboto);
+
+  font-size: 4rem;
+  text-shadow: 2px 2px 2px $color-white;
+  text-transform: uppercase;
+  z-index: -2;
+  animation: Begrüßung 10s ease-in-out forwards;
+  span {
+    padding-right: 1rem;
+  }
+}
+
+.icons div {
+  background-color: #e1e1e1;
+  font-size: 1.7rem;
+  height: 4rem;
+  width: 4rem;
+  line-height: 4rem;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  margin-left: 0.3rem;
+  margin-top: 0.7rem;
+}
+
+.icons div:hover {
+  background-color: var(--highlight);
+  color: #fff;
+}
+.navbar {
+  display: flex;
+  align-items: center;
+  display: none;
+}
+
+.home {
+  background: url(../../images/imgOdessa/odeskij-nacionalnij-akademichnij-teatr-operi-ta-baletu-large.avif)
+    no-repeat;
+  background-position: center center;
+  background-size: cover;
+  padding-top: 0;
+}
+
+.home h1 {
+  font-size: 3rem;
+}
+.home h1 span {
+  color: rgb(9, 43, 9);
+  font-size: 5rem;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+.home p {
+  color: $bg-color-black;
+  font-size: 2rem;
+  font-weight: bold;
+  line-height: 2.5rem;
+  padding: 7rem 0;
+}
+
+button {
+  background-color: rgb(184, 151, 109);
+  border: 0.2rem solid $bg-color-black;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  padding: 0.7rem 3rem;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+button:hover {
+  background-color: rgb(202, 185, 145);
+  transform: scale(1.1);
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+  transition: 3s;
+}
+.box-container .box {
+  outline: var(--outline);
+  text-align: center;
+  padding: 3rem 2rem;
+  background-color: rgb(202, 185, 145);
+  margin: 1rem;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.box img {
+  margin: 1rem 0;
+  height: 12rem;
+}
+.box h3 {
+  line-height: 2rem;
+  font-size: 2rem;
+  /* padding: 1rem 0; */
+  color: var(--black);
+}
+.box p {
+  font-size: 2rem;
+  line-height: 2.5rem;
+
+  padding: 1rem 0;
+}
+.menu {
+  display: none;
+}
+.footer {
+  grid-area: footer;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  background-color: rgb(136, 117, 91);
+  font-size: $font-size;
+
+  @include flex(space-around);
+}
+.footer ul {
+  @include flex(center);
+  list-style: $list-style;
+  li {
+    padding-right: 3rem;
+  }
+}
+@media (min-width: 768px) {
+  .box-container {
+    display: flex;
+    flex-wrap: wrap;
+
+    justify-content: center;
+  }
+  .box {
+    flex-basis: 30%;
+    flex-grow: 1;
+  }
+}
+
+@media (min-width: 1024px) {
+  .box-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .icons div:first-child {
+    display: none;
+  }
+  .navbar {
+    display: flex;
+  }
+}
+.box:nth-child(5) {
+  background-image: url("../../images/imgOdessa/thumb__1200_600_0_0_crop.jpg");
+  background-color: rgb(66, 115, 179);
+
+  animation: meer 10s linear infinite;
+}
+
+.box:nth-child(1) {
+  background-image: url("../../images/imgOdessa/odessa-ukraine-potemkinsche-treppe-100-1920x1080.jpg");
+
+  animation: treppe 10s linear infinite forwards;
+}
+@keyframes meer {
+  0% {
+    background-position: right;
+  }
+
+  100% {
+    background-position: left center;
+  }
+}
+@keyframes treppe {
+  0% {
+    background-position: bottom center;
+  }
+
+  100% {
+    background-position: top center;
+  }
+}
+
+@keyframes rotate {
+  0% {
+    background-position: left;
+  }
+
+  100% {
+    background-position: right;
+  }
+}
+.home {
+  animation: rotate 10s linear infinite;
+}
