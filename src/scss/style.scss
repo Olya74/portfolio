@@ -259,7 +259,7 @@ h1 {
 }
 
 .move-section {
-  background-image: url("../../images/noutbuk_klavishi_svechenie_170138_1280x720.jpg");
+  background-image: url("../images/noutbuk_klavishi_svechenie_170138_1280x720.jpg");
   background-size: cover;
   width: 100%;
   height: 100vh;
@@ -594,7 +594,7 @@ form {
 }
 .active {
   .read {
-    background-color: $color-green;
+    background-color: #3e0446;
   }
   animation: active 6s ease-in-out forwards;
 }
@@ -608,7 +608,7 @@ form {
 
   100% {
     z-index: 8;
-    transform: translateX(4.5%) scale(1.2);
+    transform: translateX(4.5%) scale(1.15);
     box-shadow: 4px 4px 2px rgba(0, 0, 0, 0.5);
   }
 }
