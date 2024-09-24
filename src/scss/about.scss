@@ -263,15 +263,15 @@ button:hover {
   }
 }
 
-@keyframes rotate {
-  0% {
-    background-position: left;
-  }
+// @keyframes rotate {
+//   0% {
+//     background-position: left;
+//   }
 
-  100% {
-    background-position: right;
-  }
-}
-.home {
-  animation: rotate 10s linear infinite;
-}
+//   100% {
+//     background-position: right;
+//   }
+// }
+// .home {
+//   animation: rotate 10s linear infinite;
+// }
